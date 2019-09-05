@@ -71,3 +71,14 @@ html {
     }
   }
 }
+
+@media only screen and (max-width: 1200px) {
+  .heading {
+    font-size: 4rem;
+  }
+
+  .App {
+    grid-template-columns: 1fr;
+    grid-gap: 3rem;
+  }
+}
