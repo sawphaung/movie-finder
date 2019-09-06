@@ -44,8 +44,9 @@ html {
 
     &_image {
       margin-right: 1rem;
+
       img {
-        height: 40rem;
+        // height: 40rem;
         width: 100%;
         border-radius: 10px;
       }
@@ -80,5 +81,25 @@ html {
   .App {
     grid-template-columns: 1fr;
     grid-gap: 3rem;
+  }
+}
+
+.pagination {
+  width: 400px;
+  margin: 5rem auto;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+
+  li a {
+    text-decoration: none;
+    font-size: 2rem;
+    color: #000;
+  }
+
+  .active {
+    border-radius: 5px;
+    font-weight: bolder;
+    text-decoration: underline;
   }
 }
