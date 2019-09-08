@@ -9,13 +9,50 @@ html {
   font-size: 62.5%;
 }
 
+nav ul {
+  list-style: none;
+  padding: 3rem;
+  background-color: rgb(109, 109, 109);
+  display: flex;
+
+  li {
+    width: 100px;
+    border-radius: 5px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin: 0 2rem;
+  }
+
+  li a {
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+
+    &:hover {
+      background-color: rgb(64, 69, 69);
+      border-radius: 5px;
+      height: 100%;
+    }
+  }
+}
+
+.home h1 {
+  font-weight: bolder;
+  margin: 10rem auto;
+  font-size: 4rem;
+  text-align: center;
+  letter-spacing: 1.5px;
+}
+
 .heading {
   text-align: center;
   margin: 5rem;
   font-size: 6rem;
 }
 
-.App {
+.movies-lists {
   width: 80vw;
   margin: 30px auto;
   display: grid;
