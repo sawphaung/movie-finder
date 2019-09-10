@@ -17,7 +17,6 @@ function UpComingMovies() {
       );
       setMovies(result.data.results);
       setTotalPages(result.data.total_pages);
-      console.log(result.data);
     };
 
     movieData();
