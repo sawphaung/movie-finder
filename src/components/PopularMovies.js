@@ -1,46 +1,32 @@
-import React, { useContext } from 'react';
-// import axios from 'axios';
-// import Pagination from 'react-js-pagination';
+import React, { useState, useContext } from 'react';
+import Pagination from 'react-js-pagination';
 import MoviesLists from './MoviesLists';
 
 import MovieContext from '../context/MoviesContext';
 
 function PopularMovies() {
-  //   const API_KEY = '0429b20a4ae03f613cc8a1c247b9b375';
-
-  //   const [movies, setMovies] = useState([]);
-  //   const [pages, setPages] = useState(1);
-  //   const [totalPages, setTotalPages] = useState();
-
-  //   useEffect(() => {
-  //     const movieData = async () => {
-  //       const result = await axios(
-  //         `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=${pages}`
-  //       );
-  //       setMovies(result.data.results);
-  //       setTotalPages(result.data.total_pages);
-  //     };
-
-  //     movieData();
-  //   }, [pages]);
-
-  //   const handlePageNumber = pageNumber => {
-  //     setPages(pageNumber);
-  //   };
-
   const moviesContext = useContext(MovieContext);
-  const { popular_movies } = moviesContext;
+  const { popular_movies, total_pages } = moviesContext;
+
+  const [pages, setPages] = useState(1);
+
+  console.log(moviesContext);
+
+  const handlePageNumber = pageNumber => {
+    moviesContext.popularMovies(pageNumber);
+    setPages(pageNumber);
+  };
 
   return (
     <div>
-      <h1 className='heading'>Popular Movies </h1>
-      {/* <Pagination
+      <h1 className='heading'>Popular Movies</h1>
+      <Pagination
         activePage={pages}
         itemsCountPerPage={20}
         pageRangeDisplayed={5}
-        totalItemsCount={totalPages}
+        totalItemsCount={total_pages}
         onChange={handlePageNumber}
-      /> */}
+      />
 
       <div className='movies-lists'>
         {popular_movies.map(movie => (
@@ -48,13 +34,13 @@ function PopularMovies() {
         ))}
       </div>
 
-      {/* <Pagination
+      <Pagination
         activePage={pages}
         itemsCountPerPage={20}
         pageRangeDisplayed={5}
-        totalItemsCount={totalPages}
+        totalItemsCount={total_pages}
         onChange={handlePageNumber}
-      /> */}
+      />
     </div>
   );
 }

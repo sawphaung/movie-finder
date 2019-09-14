@@ -12,10 +12,16 @@ export default (state, action) => {
         total_pages: action.payload
       };
 
-    case 'trending_movie':
+    case 'trending_movies':
       return {
         ...state,
         trending_movies: action.payload
+      };
+
+    case 'upcoming_movies':
+      return {
+        ...state,
+        upcoming_movies: action.payload
       };
 
     default:

@@ -11,11 +11,13 @@ export default function Navbar() {
         <li>
           <Link to='/popularmovies'>Popular</Link>
         </li>
-        <li>
-          <Link to='/trendingmovies'>Trending</Link>
-        </li>
+
         <li>
           <Link to='/upcomingmovies'>Upcoming</Link>
+        </li>
+
+        <li>
+          <Link to='/trendingmovies'>Trending</Link>
         </li>
       </ul>
     </nav>
