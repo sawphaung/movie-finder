@@ -6,7 +6,7 @@ import MovieContext from '../context/MoviesContext';
 function TrendingMovies() {
   const moviesContext = useContext(MovieContext);
   const { trending_movies } = moviesContext;
-  console.log(moviesContext);
+  //   console.log(moviesContext);
 
   return (
     <div>

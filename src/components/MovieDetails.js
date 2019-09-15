@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import ReactPlayer from 'react-player';
+//import ReactPlayer from 'react-player';
 
 const MovieDetails = ({ match }) => {
   const API_KEY = '0429b20a4ae03f613cc8a1c247b9b375';
@@ -24,35 +24,43 @@ const MovieDetails = ({ match }) => {
 
   //   console.log(movieData.details, movieData.movie);
 
-  const { title, overview, genres, poster_path } = movieData.details;
-  const { results } = movieData.movie;
+  const { title, overview, genres, poster_path, runtime } = movieData.details;
+
+  //   const { results } = movieData.movie;
 
   return (
     <div>
-      <h1>{title}</h1>
-      <p>{overview}</p>
-      <div>
-        {genres &&
-          genres.map(genre => <span key={genre.id}> {genre.name} </span>)}
+      <div className='movieDetails'>
+        <div className='movieDetails_poster'>
+          {poster_path && (
+            <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt='' />
+          )}
+        </div>
+        <div className='movieDetails_contents'>
+          <h1 className='movieDetails_contents_title'>{title}</h1>
+          <div className='movieDetails_contents_genre'>
+            {genres &&
+              genres.map(genre => <span key={genre.id}> {genre.name} </span>)}
+          </div>
+          <p className='movieDetails_contents_overview'>{overview}</p>
+          <p className='movieDetails_contents_overview'>
+            Runtime: {runtime} minutes
+          </p>
+        </div>
       </div>
 
-      <div>
-        {poster_path && (
-          <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt='' />
-        )}
-      </div>
-
-      <div>
+      {/* <div className='movieVideo-wrapper'>
         {results &&
           results.map(movie => (
-            <div key={movie.id}>
+            <div key={movie.id} className='video'>
               <ReactPlayer
                 url={`https://www.youtube.com/watch?v=${movie.key}`}
                 controls
+                width='30vw'
               />
             </div>
           ))}
-      </div>
+      </div> */}
     </div>
   );
 };

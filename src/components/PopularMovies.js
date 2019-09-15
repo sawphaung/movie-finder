@@ -7,10 +7,7 @@ import MovieContext from '../context/MoviesContext';
 function PopularMovies() {
   const moviesContext = useContext(MovieContext);
   const { popular_movies, total_pages } = moviesContext;
-
   const [pages, setPages] = useState(1);
-
-  console.log(moviesContext);
 
   const handlePageNumber = pageNumber => {
     moviesContext.popularMovies(pageNumber);
