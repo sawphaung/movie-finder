@@ -44,21 +44,15 @@ nav ul {
 }
 
 .hero {
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 90vh;
-  background-position: center center;
-  display: flex;
-  align-items: center;
+  &_bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
   &_contents {
-    margin-left: 6rem;
-    padding: 4rem;
-    background-color: rgba(0, 0, 0, 0.6);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    border-radius: 20px;
     color: #fff;
+    height: 90vh;
+    padding: 10rem 7rem;
 
     .title {
       font-size: 5rem;
@@ -89,6 +83,7 @@ nav ul {
       border-radius: 10px;
       font-size: 1.6rem;
       cursor: pointer;
+      width: 15rem;
     }
   }
 }

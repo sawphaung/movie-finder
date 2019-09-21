@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.scss';
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PopularMovies from './components/PopularMovies';
 import TrendingMovies from './components/TrendingMovies';

@@ -2,24 +2,35 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import MovieContext from '../context/MoviesContext';
 
+import Slider from 'react-slick';
+
 export default function Home() {
   const moviesContext = useContext(MovieContext);
   const { popular_movies } = moviesContext;
-  const heroMovie = popular_movies[0];
+  const movieSlideArray = popular_movies.slice(0, 4);
 
-  console.log(heroMovie);
-
-  const backgroundImage = {
-    backgroundImage: `url(https://image.tmdb.org/t/p/w1280/${heroMovie &&
-      heroMovie.backdrop_path}) `
+  var settings = {
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 6000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false
   };
 
   return (
-    <div className='hero' style={backgroundImage}>
-      <div className='hero_contents'>
-        <div>
-          {heroMovie && (
-            <div>
+    <Slider {...settings}>
+      {movieSlideArray.map(heroMovie => (
+        <div key={heroMovie.title} className='hero'>
+          <div
+            style={{
+              backgroundImage: `url(https://image.tmdb.org/t/p/w1280/${heroMovie.backdrop_path}) `
+            }}
+            className='hero_bg'
+          >
+            <div className='hero_contents'>
               <h1 className='title'>
                 {heroMovie.title}
                 <span>{heroMovie.vote_average}</span>
@@ -29,9 +40,9 @@ export default function Home() {
                 Learn More
               </Link>
             </div>
-          )}
+          </div>
         </div>
-      </div>
-    </div>
+      ))}
+    </Slider>
   );
 }

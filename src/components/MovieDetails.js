@@ -22,8 +22,6 @@ const MovieDetails = ({ match }) => {
     movieFetchData();
   }, [movie_id]);
 
-  console.log(movieData.details, movieData.movie);
-
   const {
     title,
     overview,
