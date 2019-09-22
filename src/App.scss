@@ -17,7 +17,7 @@ a {
 nav ul {
   list-style: none;
   padding: 3rem;
-  background-color: rgb(109, 109, 109);
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
   display: flex;
 
   li {
@@ -34,56 +34,63 @@ nav ul {
     font-size: 2rem;
     font-weight: bold;
     color: #fff;
-
-    &:hover {
-      background-color: rgb(64, 69, 69);
-      border-radius: 5px;
-      height: 100%;
-    }
+    transition: 200ms all;
   }
 }
 
 .hero {
-  &_bg {
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  height: 80vh;
 
-  &_contents {
-    color: #fff;
-    height: 90vh;
-    padding: 10rem 7rem;
+  &_carousel {
+    &_items {
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 90vh;
+      position: relative;
 
-    .title {
-      font-size: 5rem;
-      font-weight: bolder;
-      letter-spacing: 1.5px;
-      font-family: 'Fjalla One', sans-serif;
+      &_contents {
+        color: #fff;
+        width: 40vw;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        position: absolute;
+        top: 40%;
+        left: 5%;
+        transform: translateY(-40%);
+        padding: 3rem;
 
-      span {
-        font-size: 2rem;
-        margin-left: 3rem;
-        padding: 2rem;
-        border: 3px solid rgb(91, 199, 81);
-        border-radius: 50%;
+        .title {
+          font-size: 3.2rem;
+          font-weight: bolder;
+          letter-spacing: 1.5px;
+          font-family: 'Fjalla One', sans-serif;
+
+          span {
+            font-size: 1.6rem;
+            margin-left: 3rem;
+            padding: 2rem;
+            border: 2px solid rgb(91, 199, 81);
+            border-radius: 50%;
+          }
+        }
+
+        .overview {
+          font-size: 1.5rem;
+          letter-spacing: 0.7px;
+          line-height: 1.6;
+          padding: 4rem 0;
+          width: 35vw;
+        }
+
+        .button {
+          padding: 1rem;
+          border: 2px solid rgb(91, 199, 81);
+          border-radius: 10px;
+          font-size: 1.4rem;
+          cursor: pointer;
+          width: 15rem;
+        }
       }
-    }
-
-    .overview {
-      font-size: 2rem;
-      letter-spacing: 0.7px;
-      line-height: 1.6;
-      padding: 4rem 0;
-      width: 35vw;
-    }
-
-    .button {
-      padding: 1rem;
-      border: 2px solid rgb(91, 199, 81);
-      border-radius: 10px;
-      font-size: 1.6rem;
-      cursor: pointer;
-      width: 15rem;
     }
   }
 }
