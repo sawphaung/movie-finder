@@ -39,15 +39,15 @@ nav ul {
 }
 
 .hero {
-  height: 90vh;
-  overflow: hidden;
-
   &_carousel {
+    outline: none;
+    position: relative;
+
     &_items {
       background-repeat: no-repeat;
       background-size: cover;
-      height: 90vh;
-      position: relative;
+      background-position: center center;
+      height: 70vh;
 
       &_contents {
         color: #fff;
@@ -68,9 +68,9 @@ nav ul {
           font-family: 'Fjalla One', sans-serif;
 
           span {
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             margin-left: 3rem;
-            padding: 2rem;
+            padding: 1rem;
             border: 2px solid rgb(91, 199, 81);
             border-radius: 50%;
           }
@@ -97,47 +97,46 @@ nav ul {
   }
 }
 
+.bg-color {
+  background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
+}
+
 .heading {
   text-align: center;
-  margin: 5rem;
-  font-size: 6rem;
+  padding: 2rem;
+  font-size: 5rem;
 }
 
 .movies-lists {
   width: 80vw;
-  margin: 30px auto;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 5rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 2rem;
 }
 
 .movie {
-  border: 2px dotted rgba(0, 0, 0, 0.5);
-  padding: 2rem;
+  padding: 1rem;
   margin: 1rem 0;
   border-radius: 10px;
+  background-color: rgba(199, 199, 201, 0.5);
 
   &_heading {
     text-align: center;
-    font-size: 2.7rem;
+    font-size: 2rem;
     margin-bottom: 2rem;
   }
 
   &_container {
-    display: flex;
+    display: block;
 
     & > * {
       flex: 1;
     }
 
-    &_image {
-      margin-right: 1rem;
-
-      img {
-        // height: 40rem;
-        width: 100%;
-        border-radius: 10px;
-      }
+    &_image img {
+      width: 100%;
+      border-radius: 10px;
     }
 
     &_contents {
@@ -151,7 +150,7 @@ nav ul {
       h1,
       p,
       img {
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
       }
 
       p {
@@ -163,7 +162,8 @@ nav ul {
 
 .movieDetails {
   display: flex;
-  margin: 5rem;
+  padding: 3rem 5rem 2rem;
+  background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
 
   &_poster {
     img {
@@ -195,7 +195,7 @@ nav ul {
       & > span {
         font-size: 1.5rem;
         border: 1px solid rgb(155, 78, 78);
-        margin: 0.5rem 2rem;
+        margin: 0.5rem 1rem;
         padding: 1rem 2rem;
         border-radius: 5px;
         display: inline-block;
@@ -240,7 +240,8 @@ nav ul {
 
 .pagination {
   width: 400px;
-  margin: 5rem auto;
+  margin: 0 auto;
+  padding: 3rem 0;
   display: flex;
   justify-content: space-around;
   list-style: none;

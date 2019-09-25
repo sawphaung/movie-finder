@@ -15,7 +15,7 @@ function PopularMovies() {
   };
 
   return (
-    <div>
+    <div className='bg-color'>
       <h1 className='heading'>Popular Movies</h1>
       <Pagination
         activePage={pages}

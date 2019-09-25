@@ -5,7 +5,6 @@ const MoviesLists = ({ movie }) => {
   return (
     <div className='movie'>
       <Link to={`/movies/${movie.id}`}>
-        <h1 className='movie_heading'>{movie.title}</h1>
         <div className='movie_container'>
           <div className='movie_container_image'>
             <img
@@ -14,13 +13,7 @@ const MoviesLists = ({ movie }) => {
             />
           </div>
           <div className='movie_container_contents'>
-            <p>
-              Overview: <span>{movie.overview}</span>
-            </p>
-            <p>Release Date: {movie.release_date}</p>
-            <p>Popularity: {movie.popularity}</p>
-            <p>Rating: {movie.vote_average} / 10</p>
-            <p>Vote Count: {movie.vote_count}</p>
+            <h1 className='movie_heading'>{movie.title}</h1>
           </div>
         </div>
       </Link>

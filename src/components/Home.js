@@ -21,30 +21,32 @@ export default function Home() {
   };
 
   return (
-    <div className='hero'>
-      <Slider {...settings}>
-        {movieSlideArray.map(heroMovie => (
-          <div key={heroMovie.title} className='hero_carousel'>
-            <div
-              className='hero_carousel_items'
-              style={{
-                backgroundImage: `url(https://image.tmdb.org/t/p/w1280/${heroMovie.backdrop_path}) `
-              }}
-            >
-              <div className='hero_carousel_items_contents'>
-                <h1 className='title'>
-                  {heroMovie.title}
-                  <span>{heroMovie.vote_average}</span>
-                </h1>
-                <p className='overview'>{heroMovie.overview}</p>
-                <Link to={`/movies/${heroMovie.id}`} className='button'>
-                  Learn More
-                </Link>
+    <div>
+      <div className='hero'>
+        <Slider {...settings}>
+          {movieSlideArray.map(heroMovie => (
+            <div key={heroMovie.title} className='hero_carousel'>
+              <div
+                className='hero_carousel_items'
+                style={{
+                  backgroundImage: `url(https://image.tmdb.org/t/p/w1280/${heroMovie.backdrop_path}) `
+                }}
+              >
+                <div className='hero_carousel_items_contents'>
+                  <h1 className='title'>
+                    {heroMovie.title}
+                    <span>{heroMovie.vote_average}</span>
+                  </h1>
+                  <p className='overview'>{heroMovie.overview}</p>
+                  <Link to={`/movies/${heroMovie.id}`} className='button'>
+                    Learn More
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </Slider>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 }

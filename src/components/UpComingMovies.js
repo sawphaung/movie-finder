@@ -33,7 +33,7 @@ function UpComingMovies() {
   const { upcoming_movies, total_pages } = moviesContext;
 
   return (
-    <div>
+    <div className='bg-color'>
       <h1 className='heading'>Upcoming Movies </h1>
       <Pagination
         activePage={pages}

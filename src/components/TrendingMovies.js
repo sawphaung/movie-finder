@@ -9,7 +9,7 @@ function TrendingMovies() {
   //   console.log(moviesContext);
 
   return (
-    <div>
+    <div className='bg-color'>
       <h1 className='heading'>Trending Movies </h1>
 
       <div className='movies-lists'>
