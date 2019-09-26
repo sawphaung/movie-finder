@@ -10,7 +10,7 @@ export default function Home() {
   const movieSlideArray = popular_movies.slice(0, 4);
 
   var settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     autoplay: true,
     speed: 2000,
@@ -39,13 +39,18 @@ export default function Home() {
                   </h1>
                   <p className='overview'>{heroMovie.overview}</p>
                   <Link to={`/movies/${heroMovie.id}`} className='button'>
-                    Learn More
+                    Details
                   </Link>
                 </div>
               </div>
             </div>
           ))}
         </Slider>
+      </div>
+
+      <div className='sponser'>
+        <h1>Data Provided by The Movie DB</h1>
+        <span>Work in Progress!</span>
       </div>
     </div>
   );
