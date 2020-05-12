@@ -558,14 +558,18 @@ nav {
 
 // Footer
 .footer {
+  position: relative;
   background: #121212;
   color: #fff;
   padding: 2rem 0;
 
   span {
-    display: inline-block;
+    position: absolute;
+    display: block;
+    font-size: 1.2rem;
+    right: 1.5rem;
+    bottom: 1rem;
     letter-spacing: 0.05em;
-    padding-left: 1rem;
   }
 
   p {
