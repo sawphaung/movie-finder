@@ -1,9 +1,9 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext } from "react";
 // import axios from 'axios';
-import Pagination from 'react-js-pagination';
-import MoviesLists from './MoviesLists';
+import Pagination from "react-js-pagination";
+import MoviesLists from "./MoviesLists";
 
-import MovieContext from '../context/MoviesContext';
+import MovieContext from "../context/MoviesContext";
 
 function UpComingMovies() {
   //   const API_KEY = '0429b20a4ae03f613cc8a1c247b9b375';
@@ -24,7 +24,7 @@ function UpComingMovies() {
   //     movieData();
   //   }, [pages]);
 
-  const handlePageNumber = pageNumber => {
+  const handlePageNumber = (pageNumber) => {
     setPages(pageNumber);
     moviesContext.upcomingMovies(pageNumber);
   };
@@ -33,17 +33,11 @@ function UpComingMovies() {
   const { upcoming_movies, total_pages } = moviesContext;
 
   return (
-    <div className='bg-color'>
-      <h1 className='heading'>Upcoming Movies </h1>
-      <Pagination
-        activePage={pages}
-        pageRangeDisplayed={5}
-        totalItemsCount={total_pages}
-        onChange={handlePageNumber}
-      />
+    <div className="bg-color">
+      <h1 className="heading">Upcoming Movies </h1>
 
-      <div className='movies-lists'>
-        {upcoming_movies.map(movie => (
+      <div className="movies-lists">
+        {upcoming_movies.map((movie) => (
           <MoviesLists key={movie.id} movie={movie} />
         ))}
       </div>

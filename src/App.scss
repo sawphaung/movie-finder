@@ -11,6 +11,10 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  overflow-x: hidden !important;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -67,8 +71,31 @@ a {
 }
 
 nav {
+  position: relative;
   height: 80px;
   background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+
+  .movie-db {
+    position: absolute;
+    right: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+    width: 5rem;
+
+    a {
+      transition: all 0.3s ease;
+
+      &:hover img {
+        transform: scale(1.1);
+      }
+    }
+
+    img {
+      max-width: 100%;
+      transition: all 0.3s ease;
+    }
+  }
 
   ul {
     list-style: none;
@@ -263,13 +290,15 @@ nav {
 }
 
 // Text under Rotator
-.sponser {
-  margin: 5rem auto;
-  text-align: center;
+.heading-popular {
+  display: block;
+  margin: 3.5rem auto 2.5rem;
+  padding-left: 4.5%;
 
   h2 {
-    font-size: 3rem;
-    letter-spacing: 0.02em;
+    font-size: 3.2rem;
+    letter-spacing: 0.01em;
+    font-weight: bold;
 
     @media screen and (max-width: 640px) {
       font-size: 2.4rem;
@@ -288,15 +317,17 @@ nav {
   font-size: 4rem;
 }
 
+// Cards / Lists
 .movies-lists {
-  width: 80vw;
-  margin: 0 auto;
+  width: 100%;
+  padding: 0 4.5%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 2rem;
 
-  @media screen and (max-width: 1500px) {
-    width: 90vw;
+  @media screen and (max-width: 1280px) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
   }
 
   @media screen and (max-width: 1000px) {
@@ -314,11 +345,20 @@ nav {
   }
 }
 
+// Card / list
 .movie {
   padding: 1rem;
   margin: 1rem 0;
   border-radius: 10px;
   background-color: rgba(199, 199, 201, 0.5);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 17px 44px 0 rgba(0, 33, 77, 0.15);
+  }
 
   &_heading {
     text-align: center;
@@ -341,9 +381,13 @@ nav {
       flex: 1;
     }
 
-    &_image img {
-      width: 100%;
-      border-radius: 10px;
+    &_image {
+      overflow: hidden;
+
+      img {
+        max-width: 100%;
+        border-radius: 10px;
+      }
     }
 
     &_contents {
@@ -406,7 +450,7 @@ nav {
     }
 
     &_genre {
-      padding: 2rem 0;
+      padding: 2rem 0 1rem;
 
       & > span {
         font-size: 1.5rem;
@@ -420,6 +464,14 @@ nav {
           margin-left: 0;
         }
       }
+    }
+
+    .overview-heading {
+      font-size: 2.4rem;
+      font-weight: bold;
+      text-transform: capitalize;
+      padding: 1rem 0;
+      letter-spacing: 0.05em;
     }
 
     &_overview {
@@ -474,7 +526,8 @@ nav {
 }
 
 .pagination {
-  width: 400px;
+  width: 100%;
+  max-width: 40rem;
   margin: 0 auto;
   padding: 3rem 0;
   display: flex;
@@ -485,11 +538,46 @@ nav {
     text-decoration: none;
     font-size: 2rem;
     color: #000;
+    font-weight: bold;
   }
 
   .active {
     border-radius: 5px;
     font-weight: bolder;
     text-decoration: underline;
+  }
+
+  @media screen and (max-width: 640px) {
+    padding: 2rem 0;
+
+    li a {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+// Footer
+.footer {
+  background: #121212;
+  color: #fff;
+  padding: 2rem 0;
+
+  span {
+    display: inline-block;
+    letter-spacing: 0.05em;
+    padding-left: 1rem;
+  }
+
+  p {
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 0.07em;
+
+    a {
+      display: inline-block;
+      margin-left: 5px;
+      text-decoration: underline;
+    }
   }
 }

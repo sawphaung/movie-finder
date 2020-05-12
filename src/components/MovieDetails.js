@@ -47,6 +47,8 @@ const MovieDetails = ({ match }) => {
         <p className="movieDetails_contents_runtime">
           Runtime: {runtime} minutes
         </p>
+
+        <p class="overview-heading">overview</p>
         <p className="movieDetails_contents_overview">{overview}</p>
       </div>
     </div>
