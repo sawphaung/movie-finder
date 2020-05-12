@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import MovieContext from '../context/MoviesContext';
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import MovieContext from "../context/MoviesContext";
 
-import Slider from 'react-slick';
+import Slider from "react-slick";
 
 export default function Home() {
   const moviesContext = useContext(MovieContext);
@@ -17,29 +17,29 @@ export default function Home() {
     autoplaySpeed: 6000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false
+    arrows: false,
   };
 
   return (
     <div>
-      <div className='hero'>
+      <div className="hero">
         <Slider {...settings}>
-          {movieSlideArray.map(heroMovie => (
-            <div key={heroMovie.title} className='hero_carousel'>
+          {movieSlideArray.map((heroMovie) => (
+            <div key={heroMovie.title} className="hero_carousel">
               <div
-                className='hero_carousel_items'
+                className="hero_carousel_items"
                 style={{
-                  backgroundImage: `url(https://image.tmdb.org/t/p/w1280/${heroMovie.backdrop_path}) `
+                  background: `url(https://image.tmdb.org/t/p/w1280/${heroMovie.backdrop_path}) center`,
                 }}
               >
-                <div className='hero_carousel_items_contents'>
-                  <h1 className='title'>
+                <div className="hero_carousel_items_contents">
+                  <h1 className="title">
                     {heroMovie.title}
                     <span>{heroMovie.vote_average}</span>
                   </h1>
-                  <p className='overview'>{heroMovie.overview}</p>
-                  <Link to={`/movies/${heroMovie.id}`} className='button'>
-                    Details
+                  <p className="overview">{heroMovie.overview}</p>
+                  <Link to={`/movies/${heroMovie.id}`} className="button">
+                    Learn More
                   </Link>
                 </div>
               </div>
@@ -48,9 +48,8 @@ export default function Home() {
         </Slider>
       </div>
 
-      <div className='sponser'>
-        <h1>Data Provided by The Movie DB</h1>
-        <span>Work in Progress!</span>
+      <div className="sponser">
+        <h2>Data Provided by The Movie DB</h2>
       </div>
     </div>
   );
