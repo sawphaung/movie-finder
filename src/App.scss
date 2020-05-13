@@ -209,6 +209,28 @@ nav {
     bottom: 10px;
   }
 
+  .slick-arrow {
+    z-index: 99;
+    height: 100%;
+    cursor: pointer;
+
+    &.slick-prev {
+      left: 1%;
+
+      &::before {
+        font-size: 3.5rem;
+      }
+    }
+
+    &.slick-next {
+      right: 1%;
+
+      &::before {
+        font-size: 3.5rem;
+      }
+    }
+  }
+
   &_carousel {
     outline: none;
     position: relative;
@@ -416,6 +438,7 @@ nav {
   display: flex;
   width: 100%;
   padding: 5rem;
+  min-height: 90vh;
   background: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
   background-size: cover;
 
@@ -436,10 +459,14 @@ nav {
 
     &_title {
       font-size: 3rem;
+    }
+
+    &_title + p {
+      padding-top: 2rem;
 
       span {
         display: inline-block;
-        margin-left: 1.5rem;
+        margin-right: 1.5rem;
         font-size: 1.5rem;
         padding: 1rem 2rem;
         border-radius: 10px;
@@ -452,22 +479,31 @@ nav {
     &_genre {
       padding: 2rem 0 1rem;
 
+      .lead {
+        font-size: 2.2rem;
+        font-weight: bold;
+        text-transform: capitalize;
+        padding: 1rem 0;
+        letter-spacing: 0.05em;
+        padding-bottom: 1rem;
+      }
+
       & > span {
+        display: inline-block;
         font-size: 1.5rem;
         border: 1px solid rgb(155, 78, 78);
         margin: 1rem 1rem;
         padding: 1rem 2rem;
         border-radius: 5px;
-        display: inline-block;
 
-        &:first-child {
+        &:first-of-type {
           margin-left: 0;
         }
       }
     }
 
     .overview-heading {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       font-weight: bold;
       text-transform: capitalize;
       padding: 1rem 0;
@@ -477,13 +513,39 @@ nav {
     &_overview {
       font-size: 1.8rem;
       line-height: 1.8;
+      padding-top: 2rem;
     }
 
-    &_runtime {
-      font-size: 2rem;
-      line-height: 1.8;
-      font-weight: bold;
-      padding: 1rem 0;
+    &_companies {
+      padding-top: 1.5rem;
+
+      .lead {
+        font-size: 2.2rem;
+        font-weight: bold;
+        text-transform: capitalize;
+        padding: 1rem 0;
+        letter-spacing: 0.05em;
+        padding-bottom: 2rem;
+      }
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 2rem;
+
+        li {
+          width: 50%;
+          font-size: 1.8rem;
+          letter-spacing: 0.05em;
+          padding-bottom: 1.5rem;
+        }
+
+        @media screen and (max-width: 640px) {
+          li {
+            width: 100%;
+          }
+        }
+      }
     }
   }
 
@@ -498,7 +560,7 @@ nav {
 
     &_contents {
       padding-left: 0;
-      padding-top: 50px;
+      padding-top: 4rem;
     }
   }
 }
@@ -566,10 +628,14 @@ nav {
   span {
     position: absolute;
     display: block;
-    font-size: 1.2rem;
+    font-size: 1rem;
     right: 1.5rem;
     bottom: 1rem;
     letter-spacing: 0.05em;
+
+    @media screen and (max-width: 480px) {
+      right: 1rem;
+    }
   }
 
   p {

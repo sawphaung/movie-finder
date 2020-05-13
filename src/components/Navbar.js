@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <nav>
       <input id="nav-toggle" type="checkbox" />
-      <label for="nav-toggle" class="toggle">
+      <label for="nav-toggle" className="toggle">
         <span></span>
       </label>
 

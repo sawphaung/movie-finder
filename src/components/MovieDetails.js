@@ -14,6 +14,8 @@ const MovieDetails = ({ match }) => {
       );
 
       setMovieData({ details: movieDetails.data });
+
+      console.log(movieDetails.data);
     };
 
     movieFetchData();
@@ -26,6 +28,7 @@ const MovieDetails = ({ match }) => {
     poster_path,
     runtime,
     status,
+    production_companies,
   } = movieData.details;
 
   return (
@@ -37,19 +40,29 @@ const MovieDetails = ({ match }) => {
       </div>
 
       <div className="movieDetails_contents">
-        <h1 className="movieDetails_contents_title">
-          {title} <span>{status}</span>
-        </h1>
+        <h1 className="movieDetails_contents_title">{title}</h1>
+
+        <p>
+          <span>{status}</span> <span>{runtime} Mins</span>
+        </p>
+
+        <p className="movieDetails_contents_overview">{overview}</p>
         <div className="movieDetails_contents_genre">
+          <p className="lead">Genres: </p>
           {genres &&
             genres.map((genre) => <span key={genre.id}> {genre.name} </span>)}
         </div>
-        <p className="movieDetails_contents_runtime">
-          Runtime: {runtime} minutes
-        </p>
 
-        <p class="overview-heading">overview</p>
-        <p className="movieDetails_contents_overview">{overview}</p>
+        <div className="movieDetails_contents_companies">
+          <p className="lead">Production Companies:</p>
+
+          <ul>
+            {production_companies &&
+              production_companies.map((company) => (
+                <li key={company.id}> {company.name} </li>
+              ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

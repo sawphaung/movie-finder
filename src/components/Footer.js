@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div class="footer">
+    <div className="footer">
       <span>Version: 1.0</span>
       <p>
         Designed by
