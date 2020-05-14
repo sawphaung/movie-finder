@@ -13,9 +13,9 @@ const MovieDetails = ({ match }) => {
         `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${API_KEY}&language=en-US`
       );
 
-      setMovieData({ details: movieDetails.data });
-
-      console.log(movieDetails.data);
+      setMovieData({
+        details: movieDetails.data,
+      });
     };
 
     movieFetchData();

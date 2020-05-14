@@ -1,28 +1,11 @@
 import React, { useState, useContext } from "react";
-// import axios from 'axios';
 import Pagination from "react-js-pagination";
 import MoviesLists from "./MoviesLists";
 
 import MovieContext from "../context/MoviesContext";
 
 function UpComingMovies() {
-  //   const API_KEY = '0429b20a4ae03f613cc8a1c247b9b375';
-
-  //   const [movies, setMovies] = useState([]);
   const [pages, setPages] = useState(1);
-  //   const [totalPages, setTotalPages] = useState();
-
-  //   useEffect(() => {
-  //     const movieData = async () => {
-  //       const result = await axios(
-  //         `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US&page=${pages}`
-  //       );
-  //       setMovies(result.data.results);
-  //       setTotalPages(result.data.total_pages);
-  //     };
-
-  //     movieData();
-  //   }, [pages]);
 
   const handlePageNumber = (pageNumber) => {
     setPages(pageNumber);
