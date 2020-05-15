@@ -26,6 +26,7 @@ export default function Home() {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
+    draggable: true,
   };
 
   return (
@@ -33,11 +34,7 @@ export default function Home() {
       <div className="hero">
         <Slider {...settings}>
           {movieSlideArray.map((heroMovie) => (
-            <Link
-              to={`/movies/${heroMovie.id}`}
-              key={heroMovie.title}
-              className="hero_carousel"
-            >
+            <div key={heroMovie.title} className="hero_carousel">
               <div
                 className="hero_carousel_items"
                 style={{
@@ -55,7 +52,7 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </Slider>
       </div>
